@@ -372,7 +372,7 @@ class CarRacing(gym.Env):
             for geom in self.viewer.onetime_geoms:
                 geom.render()
             t.disable()
-            self.render_indicators(WINDOW_W, WINDOW_H)  # TODO: find why 2x needed, wtf
+            #self.render_indicators(WINDOW_W, WINDOW_H)  # TODO: find why 2x needed, wtf
             image_data = pyglet.image.get_buffer_manager().get_color_buffer().get_image_data()
             arr = np.fromstring(image_data.data, dtype=np.uint8, sep='')
             arr = arr.reshape(VP_H, VP_W, 4)
@@ -391,7 +391,7 @@ class CarRacing(gym.Env):
             for geom in self.viewer.onetime_geoms:
                 geom.render()
             t.disable()
-            self.render_indicators(WINDOW_W, WINDOW_H)
+            #self.render_indicators(WINDOW_W, WINDOW_H)
             win.flip()
 
         self.viewer.onetime_geoms = []
